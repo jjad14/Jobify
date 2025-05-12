@@ -1,7 +1,7 @@
 import React from 'react';
 
-const page = () => {
-	return <div>page</div>;
+const StatsPage = () => {
+	return <h1 className='text-4xl'>Stats Page</h1>;
 };
 
-export default page;
+export default StatsPage;

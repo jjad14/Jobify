@@ -1,7 +1,7 @@
 import React from 'react';
 
-const page = () => {
-	return <div>page</div>;
+const JobsPage = () => {
+	return <h1 className='text-4xl'>Jobs Page</h1>;
 };
 
-export default page;
+export default JobsPage;
