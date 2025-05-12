@@ -4,18 +4,18 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Jobify Dev',
-  description: 'Job application tracking system for job hunters',
+	title: 'Jobify Dev',
+	description: 'Job application tracking system for job hunters'
 };
 
 export default function RootLayout({
-  children,
+	children
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang='en' suppressHydrationWarning>
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+	return (
+		<html lang='en' suppressHydrationWarning>
+			<body className={inter.className}>{children}</body>
+		</html>
+	);
 }
