@@ -1,12 +1,5 @@
 import { JobType } from '@/utils/types';
-import {
-	MapPin,
-	Briefcase,
-	CalendarDays,
-	RadioTower,
-	Pen,
-	Trash2
-} from 'lucide-react';
+import { MapPin, Briefcase, CalendarDays, RadioTower, Pen } from 'lucide-react';
 
 import Link from 'next/link';
 import {
@@ -50,7 +43,7 @@ function JobCard({ job }: { job: JobType }) {
 						Edit
 					</Link>
 				</Button>
-				<DeleteJobBtn />
+				<DeleteJobBtn id={job.id} />
 			</CardFooter>
 		</Card>
 	);
