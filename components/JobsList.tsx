@@ -12,6 +12,7 @@ function JobsList() {
 
 	const pageNumber = Number(searchParams.get('page')) || 1;
 
+	// fetch jobs
 	const { data, isPending } = useQuery({
 		queryKey: ['jobs', search ?? '', jobStatus, pageNumber],
 		queryFn: () => getAllJobsAction({ search, jobStatus, page: pageNumber })
@@ -21,10 +22,11 @@ function JobsList() {
 	if (isPending) return <h2 className='text-xl'>Please Wait...</h2>;
 
 	if (jobs.length < 1) return <h2 className='text-xl'>No Jobs Found...</h2>;
+
 	return (
 		<>
 			{/*button container  */}
-			<div className='grid md:grid-cols-2  gap-8'>
+			<div className='grid md:grid-cols-2 gap-8'>
 				{jobs.map((job) => {
 					return <JobCard key={job.id} job={job} />;
 				})}
