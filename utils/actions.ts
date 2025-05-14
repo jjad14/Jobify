@@ -84,7 +84,7 @@ export async function getAllJobsAction({
 		}
 
 		// If jobStatus is provided, add it to the whereClause
-		if (jobStatus && jobStatus !== 'all') {
+		if (jobStatus && jobStatus !== 'All') {
 			whereClause = {
 				...whereClause,
 				status: jobStatus
