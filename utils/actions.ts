@@ -90,16 +90,28 @@ export async function getAllJobsAction({
 				status: jobStatus
 			};
 		}
+		// Calculate the skip value
+		const skip = (page - 1) * limit;
 
 		// Query the database with the whereClause and orderBy filter to retrieve list of jobs
 		const jobs: JobType[] = await prisma.job.findMany({
 			where: whereClause,
+			skip,
+			take: limit,
 			orderBy: {
 				createdAt: 'desc'
 			}
 		});
 
-		return { jobs, count: 0, page: 1, totalPages: 0 };
+		// Count the total number of jobs
+		const count: number = await prisma.job.count({
+			where: whereClause
+		});
+
+		// Calculate the total number of pages
+		const totalPages = Math.ceil(count / limit);
+
+		return { jobs, count, page, totalPages };
 	} catch (error) {
 		console.error(error);
 		return { jobs: [], count: 0, page: 1, totalPages: 0 };
