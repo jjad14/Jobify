@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getAllJobsAction } from '@/utils/actions';
 import JobCard from './JobCard';
 import ButtonContainer from './ButtonContainer';
+import AltButtonContainer from './AltButtonContainer';
 
 function JobsList() {
 	const searchParams = useSearchParams();
@@ -34,7 +35,11 @@ function JobsList() {
 					{count} Jobs Found
 				</h2>
 				{totalPages < 2 ? null : (
-					<ButtonContainer
+					// <ButtonContainer
+					// 	currentPage={page}
+					// 	totalPages={totalPages}
+					// />
+					<AltButtonContainer
 						currentPage={page}
 						totalPages={totalPages}
 					/>
