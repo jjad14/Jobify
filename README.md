@@ -29,7 +29,6 @@ Jobify is a job tracking app that helps users organize and manage their job appl
 
 ```bash
 git clone https://github.com/your-username/jobify.git
-cd jobify
 ```
 
 ### 2. Install dependencies
@@ -38,7 +37,6 @@ Clone the repository and install dependencies:
 
 ```sh
 git clone https://github.com/jjad14/Jobify.git
-cd your-repo
 npm install
 ```
 
